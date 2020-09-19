@@ -36,7 +36,7 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" text @click="dialog = false">Close</v-btn>
+          <v-btn color="blue darken-1" text @click="editPost(post)">Close</v-btn>
           <v-btn color="blue darken-1" text @click="dialog = false">Save</v-btn>
         </v-card-actions>
       </v-card>  
@@ -53,10 +53,24 @@
       picker: new Date().toISOString().substr(0, 10),
       newPost:{}
     }),methods:{
-       editPost()
+       editPost(post)
        {
-        
-        
+         let payload={
+             title:post.title,
+             author:post.author,
+             post:post.post,
+             date:post.date
+         }
+        console.log(payload);
+        fetch("",{ method:"POST",
+             headers:{"content-type":"application/json"},
+             body: JSON.stringify(payload)}).then(data=>{
+             return data.json();
+         }).then(json=>{
+             this.$emit('newPost',json.result);
+             this.newPost={};
+             this.dialog = false;
+         })
        }
     }
   }
