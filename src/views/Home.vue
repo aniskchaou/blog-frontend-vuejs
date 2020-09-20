@@ -2,11 +2,12 @@
 <div>
     <v-app id="inspire">
      <Header/>   
-    <v-main>
+    <v-main style="padding: 5px 0px 0px 0px;">
       <v-container class="fill-height" fluid>
        <Posts :posts="posts"/>
       </v-container>
     </v-main>
+    <br><br>
     <Footer/>
   </v-app>
 </div>
@@ -20,7 +21,7 @@ import Posts from '@/components/Posts.vue'
     name:'Layout',
     data(){
       return {
-       API_URL: "http://localhost:3000/all",
+       API_URL: "https://blog-nodejs-backend.herokuapp.com:3000/all",
        posts:[]
       }
     },

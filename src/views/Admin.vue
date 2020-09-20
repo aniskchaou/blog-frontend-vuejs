@@ -2,12 +2,12 @@
 <div>
     <v-app id="inspire">
      <AdminHeader/>   
-    <v-main style="padding: 5px 0px 0px 256px;">
+    <v-main style="padding: 25px 0px 0px 256px;">
       <v-container fluid >
        <AdminPosts :posts="posts" />
       </v-container>
     </v-main>
-    <Footer/>
+    <AdminFooter/>
   </v-app>
 </div>
 </template>
@@ -16,15 +16,16 @@
 
 import AdminPosts from '@/components/AdminPosts.vue'
 import AdminHeader from '@/components/AdminHeader.vue'
+import AdminFooter from '@/components/AdminFooter.vue'
 
 export default {
   name: 'Admin',
   components: {
-    AdminPosts,AdminHeader
+    AdminPosts,AdminHeader,AdminFooter
   },
     data(){
       return {
-       API_URL: "http://localhost:3000/all",
+       API_URL: "https://blog-nodejs-backend.herokuapp.com:3000/all",
        posts:[]
       }
     },methods:{

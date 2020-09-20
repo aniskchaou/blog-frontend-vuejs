@@ -2,30 +2,20 @@
 <template>
   <v-row align="center" justify="center">
 
-                <v-card class="mx-auto" max-width="300" :key="post.id" style="margin-bottom:20px;" v-for="post in posts">
+                <v-card style="margin:20px;" class="mx-auto" max-width="300" :key="post.id"  v-for="post in posts">
             <v-img
             class="white--text align-end"
             height="200px"
-            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+            width="300px"
+            :src="post.image"
             >
             <v-card-title>{{post.title}}</v-card-title>
             </v-img>
 
-            <v-card-subtitle class="pb-0">Number 10</v-card-subtitle>
-
             <v-card-text class="text--primary">
-            <div>Whitehaven Beach</div>
+            <div><v-chip class="ma-2" color="primary" text-color="white">{{post.date}}</v-chip></div>
+             <DetailPost :post="post"/>
             </v-card-text>
-
-            <v-card-actions>
-           
-            <v-btn
-                color="orange"
-                text
-            >
-                Explore
-            </v-btn>
-            </v-card-actions>
         </v-card>
 
 
@@ -48,16 +38,19 @@
 
 
 
-
+     <br><br>
         </v-row>
 
-           
-   
+        
 </template>
 
 <script>
+import DetailPost from '@/components/DetailPost.vue'
   export default {
     name: 'Posts',
-    props:['posts']
+    props:['posts'],
+    components:{
+        DetailPost
+    }
   }
 </script>

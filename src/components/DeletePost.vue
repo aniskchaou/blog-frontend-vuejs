@@ -7,17 +7,20 @@
           dark
           v-bind="attrs"
           v-on="on"
+          fab
+          outlined 
+          small
         >
-          Open Dialog
+          <v-icon>mdi-delete</v-icon> 
         </v-btn>
       </template>
       <v-card>
-        <v-card-title class="headline">Use Google's location service?</v-card-title>
-        <v-card-text>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</v-card-text>
+        <v-card-title class="headline">Delete Post</v-card-title>
+        <v-card-text>Are you sure you want to delete this post ?</v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="green darken-1" text @click="dialog = false">Disagree</v-btn>
-          <v-btn color="green darken-1" text @click="deletePost(post)">Agree</v-btn>
+          <v-btn color="green darken-1" text @click="dialog = false">Cancel</v-btn>
+          <v-btn color="green darken-1" text @click="deletePost(post)">Delete</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -35,7 +38,21 @@
       },methods:{
          deletePost(post)
          {
-          console.log(post)
+           let payload={id:post.id};
+           fetch("https://blog-nodejs-backend.herokuapp.com:3000/delete",{ 
+             method:"POST",
+             headers:{"content-type":"application/json"},
+             body: JSON.stringify(payload)
+             
+             }).then(data=>{
+               console.log(payload);
+             return data.json();
+         }).then(json=>{
+             this.$emit('posts',json.result);
+             //this.newPost={};
+             this.dialog = false;
+             this.$router.go('/admin');
+         })
          }
       }
     }
