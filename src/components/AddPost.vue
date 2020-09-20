@@ -70,7 +70,7 @@
              date:this.newPost.date,
              image: this.newPost.image
          }
-         fetch("https://blog-nodejs-backend.herokuapp.com:3000/add",{ method:"POST",
+         fetch("https://blog-nodejs-backend.herokuapp.com/add",{ method:"POST",
              headers:{"content-type":"application/json"},
              body: JSON.stringify(payload)
              

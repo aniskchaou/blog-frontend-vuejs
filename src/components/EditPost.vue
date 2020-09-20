@@ -76,7 +76,7 @@
              image:post.image
          }
         console.log(payload);
-        fetch("https://blog-nodejs-backend.herokuapp.com:3000/edit",{ method:"POST",
+        fetch("https://blog-nodejs-backend.herokuapp.com/edit",{ method:"POST",
              headers:{"content-type":"application/json"},
              body: JSON.stringify(payload)}).then(data=>{
                console.log(payload);

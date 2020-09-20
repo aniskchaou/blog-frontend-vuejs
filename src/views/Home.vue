@@ -21,7 +21,7 @@ import Posts from '@/components/Posts.vue'
     name:'Layout',
     data(){
       return {
-       API_URL: "https://blog-nodejs-backend.herokuapp.com:3000/all",
+       API_URL: "https://blog-nodejs-backend.herokuapp.com/all",
        posts:[]
       }
     },

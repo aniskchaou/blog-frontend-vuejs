@@ -39,7 +39,7 @@
          deletePost(post)
          {
            let payload={id:post.id};
-           fetch("https://blog-nodejs-backend.herokuapp.com:3000/delete",{ 
+           fetch("https://blog-nodejs-backend.herokuapp.com/delete",{ 
              method:"POST",
              headers:{"content-type":"application/json"},
              body: JSON.stringify(payload)
