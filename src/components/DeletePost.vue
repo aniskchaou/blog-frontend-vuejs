@@ -51,7 +51,7 @@
              this.$emit('posts',json.result);
              //this.newPost={};
              this.dialog = false;
-             this.$router.go('/admin');
+             this.$router.go();
          })
          }
       }
