@@ -11,33 +11,11 @@
             >
             <v-card-title>{{post.title}}</v-card-title>
             </v-img>
-
             <v-card-text class="text--primary">
             <div><v-chip class="ma-2" color="primary" text-color="white">{{post.date}}</v-chip></div>
              <DetailPost :post="post"/>
             </v-card-text>
         </v-card>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
      <br><br>
         </v-row>
 

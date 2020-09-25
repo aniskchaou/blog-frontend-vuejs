@@ -4,19 +4,9 @@
     <v-dialog v-model="dialog" persistent max-width="600px">
       
       <template v-slot:activator="{ on, attrs }">
-      
-        <v-btn
-          color="warning"
-          dark
-          v-bind="attrs"
-          v-on="on"
-          fab
-          outlined 
-          small
-        >
+        <v-btn color="warning" dark  v-bind="attrs"  v-on="on" fab outlined  small>
           <v-icon>mdi-pencil</v-icon> 
-        </v-btn>
-        
+        </v-btn> 
       </template>
       
       <v-card>

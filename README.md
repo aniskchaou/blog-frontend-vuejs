@@ -1,24 +1,23 @@
-# blog-vuejs
 
-## Project setup
-```
-yarn install
-```
+## Screenshot
+<p align="center">
+<img src="intro.png" />
+</p>
+<br>
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## Architecture
+<p align="center">
+<img src="arch.png" />
+</p>
+<br>
 
-### Compiles and minifies for production
-```
-yarn build
-```
+## Features
 
-### Lints and fixes files
-```
-yarn lint
-```
+ - view post
+ - create, update and delete posts
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Technologies
+Vue.js 2, Vuetify, Node.js, Express.js, PostgresSQL
+
+## Back end
+https://github.com/aniskchaou/blog-backend-nodejs
